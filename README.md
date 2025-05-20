@@ -22,6 +22,8 @@ Play it live here:
 <sub>(Replace "your-username" with your actual GitHub username after deploying)</sub>
 
 ## 📁 Project Structure
+
+```plaintext
 tic-tac-toe/
 ├── index.html          # Main HTML structure
 ├── style.css           # Styling and layout
@@ -30,4 +32,3 @@ tic-tac-toe/
     ├── click.mp3
     ├── win.mp3
     └── draw.mp3
-
