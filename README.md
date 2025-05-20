@@ -32,3 +32,16 @@ tic-tac-toe/
     ├── click.mp3
     ├── win.mp3
     └── draw.mp3
+
+## 🛠️ Tech Stack
+
+- HTML5  
+- CSS3 (Flexbox, media queries)  
+- JavaScript (DOM, events, Audio API)  
+
+## 📬 Contact
+
+Have feedback or ideas? Feel free to contribute or reach out!
+
+Happy gaming! 🎉
+
