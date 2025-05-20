@@ -18,7 +18,7 @@ A simple, interactive browser-based Tic Tac Toe game built using HTML, CSS, and 
 ## 🖥️ Live Demo
 
 Play it live here:  
-🔗 https://your-username.github.io/tic-tac-toe/  
+🔗 https://aashid-m.github.io/tic-tac-toe/  
 <sub>(Replace "your-username" with your actual GitHub username after deploying)</sub>
 
 ## 📁 Project Structure
@@ -43,6 +43,5 @@ tic-tac-toe/
 ## 📬 Contact
 
 Have feedback or ideas? Feel free to contribute or reach out!
-
 Happy gaming! 🎉
 
