@@ -1,0 +1,99 @@
+function startGame() {
+  let boxes = document.querySelectorAll(".box");
+  let resetbtn = document.querySelector("#reset-btn");
+  let newGameBtn = document.querySelector("#new-btn");
+  let msgConatiner = document.querySelector(".msg-container");
+  let msg = document.querySelector("#msg");
+
+  let clickSound = new Audio("sounds/click.mp3");
+  let winSound = new Audio("sounds/win.mp3");
+  let drawSound = new Audio("sounds/draw.mp3");
+
+  let turnO = true; //player0
+  let count = 0; // counts total clicks
+
+  const winningPattterns = [
+    [0, 1, 2],
+    [3, 4, 5],
+    [6, 7, 8],
+    [0, 3, 6],
+    [1, 4, 7],
+    [2, 5, 8],
+    [0, 4, 8],
+    [2, 4, 6],
+  ];
+
+  const resetGame = () => {
+    turnO = true;
+    count = 0;
+    enableBoxes();
+    msgConatiner.classList.add("hide");
+  };
+
+  const enableBoxes = () => {
+    for (let box of boxes) {
+      box.disabled = false;
+      box.innerText = "";
+    }
+  };
+
+  const disableBoxes = () => {
+    for (let box of boxes) {
+      box.disabled = true;
+    }
+  };
+
+  const showWinner = (winner) => {
+    winSound.play();
+    msg.innerText = `Congratulations, Winner is ${winner}`;
+    msgConatiner.classList.remove("hide");
+    disableBoxes();
+  };
+
+  const checkWinner = () => {
+    for (let pattern of winningPattterns) {
+      let pos1Val = boxes[pattern[0]].innerText;
+      let pos2Val = boxes[pattern[1]].innerText;
+      let pos3Val = boxes[pattern[2]].innerText;
+
+      if (pos1Val !== "" && pos2Val !== "" && pos3Val !== "") {
+        if (pos1Val === pos2Val && pos2Val === pos3Val) {
+          showWinner(pos1Val);
+          return; // Stop if winner is found
+        }
+      }
+    }
+    // If no winner and all boxes are clicked
+    if (count === 9) {
+      drawSound.play();
+      msg.innerText = "Game was a Draw!";
+      msgConatiner.classList.remove("hide");
+    }
+  };
+
+  // Setup box click event
+  boxes.forEach((box) => {
+    box.addEventListener("click", () => {
+      clickSound.play();
+      if (turnO) {
+        box.innerText = "O";
+        box.style.color = "black";
+        turnO = false;
+      } else {
+        box.innerText = "X";
+        box.style.color = "white";
+        turnO = true;
+      }
+      box.disabled = true;
+      count++;
+      checkWinner();
+    });
+  });
+
+  // Button click events
+  newGameBtn.addEventListener("click", resetGame);
+  resetbtn.addEventListener("click", resetGame);
+}
+
+// 🚀 Call the main function when the page loads
+startGame();

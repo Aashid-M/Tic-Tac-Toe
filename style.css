@@ -1,0 +1,138 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #2e2b3f;
+  text-align: center;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Heading style */
+h1 {
+  color: #acc12f;
+  margin: 1rem 0;
+  font-size: 3rem;
+}
+
+/* Container for board */
+.container {
+  height: 70vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Game board */
+.game {
+  height: 60vmin;
+  width: 60vmin;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5vmin;
+}
+
+/* Each box */
+.box {
+  height: 18vmin;
+  width: 18vmin;
+  border-radius: 1rem;
+  border: none;
+  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.5);
+  font-size: 6vmin;
+  color: #2e2b3f;
+  background-color: #96a13a;
+  cursor: pointer;
+  transition: transform 0.2s, background-color 0.3s;
+}
+
+/* Click animation */
+.box:active {
+  transform: scale(1.1);
+}
+
+/* Optional hover effect */
+.box:hover:enabled {
+  background-color: #a7b346;
+}
+
+/* Buttons */
+#reset-btn,
+#new-btn {
+  padding: 1rem 2rem;
+  font-size: 1.2rem;
+  margin: 1rem;
+  border: none;
+  border-radius: 1rem;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+#reset-btn {
+  background-color: #3a393a;
+}
+#reset-btn:hover {
+  background-color: #575657;
+}
+
+#new-btn {
+  background-color: #222;
+}
+#new-btn:hover {
+  background-color: #444;
+}
+
+/* Result message text */
+#msg {
+  color: #acc12f;
+  font-size: 8vmin;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+/* Message container */
+.msg-container {
+  height: 80vmin;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  transition: all 0.5s ease-in-out;
+  transform: scale(0.9);
+  opacity: 0;
+}
+
+/* Show message */
+.msg-container:not(.hide) {
+  transform: scale(1);
+  opacity: 1;
+}
+
+/* Hide class */
+.hide {
+  display: none;
+}
+
+/* Responsive Tweaks */
+@media (max-width: 600px) {
+  .game {
+    width: 90vmin;
+    height: 90vmin;
+  }
+
+  .box {
+    height: 26vmin;
+    width: 26vmin;
+    font-size: 8vmin;
+  }
+
+  #msg {
+    font-size: 10vmin;
+  }
+}
