@@ -95,5 +95,5 @@ function startGame() {
   resetbtn.addEventListener("click", resetGame);
 }
 
-// 🚀 Call the main function when the page loads
+//  Call the main function when the page loads
 startGame();
