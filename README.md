@@ -22,4 +22,12 @@ Play it live here:
 <sub>(Replace "your-username" with your actual GitHub username after deploying)</sub>
 
 ## 📁 Project Structure
-<pre> ```plaintext tic-tac-toe/ ├── index.html # Main HTML structure ├── style.css # Styling and layout ├── app.js # Game logic and interactivity └── sounds/ # Sound effect files ├── click.mp3 ├── win.mp3 └── draw.mp3 ``` </pre>
+tic-tac-toe/
+├── index.html          # Main HTML structure
+├── style.css           # Styling and layout
+├── app.js              # Game logic and interactivity
+└── sounds/             # Sound effect files
+    ├── click.mp3
+    ├── win.mp3
+    └── draw.mp3
+
