@@ -32,6 +32,7 @@ tic-tac-toe/
     ├── click.mp3
     ├── win.mp3
     └── draw.mp3
+```
 
 ## 🛠️ Tech Stack
 
